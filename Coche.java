@@ -5,7 +5,7 @@ public class Coche {
     private String modelo;
     private String color;
     private double precio;
-    private boolean revisar;
+    boolean revisar;
     private boolean[] revisiones = new boolean[5];
 
     Coche(){
@@ -18,6 +18,8 @@ public class Coche {
         revisar = false;
     }
 
+
+
     Coche (int nb, String matr, String mar, String mod, String col, double prec, boolean rev, boolean[] revs){
         this.numBastidor = nb;
         this.matricula = matr;
@@ -27,6 +29,15 @@ public class Coche {
         this.precio = prec;
         this.revisar = rev;
         this.revisiones = revs;
+    }
+
+    public Coche(int nb, String matr, String mar, String mod, String col, double prec) {
+        this.numBastidor = nb;
+        this.matricula = matr;
+        this.marca = mar;
+        this.modelo = mod;
+        this.color = col;
+        this.precio = prec;
     }
 
     public void setNumBastidor(int nb){
@@ -105,7 +116,7 @@ public class Coche {
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Color: " + this.color);
         System.out.println("Precios: " + this.precio);
-        System.out.println("Reviar: " + this.revisar);
+        System.out.println("Revisar: " + this.revisar);
         System.out.println("Revisiones:");
 
         for (int i = 0; i < 5; i++) {
