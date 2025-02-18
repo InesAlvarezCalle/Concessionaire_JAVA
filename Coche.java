@@ -18,8 +18,6 @@ public class Coche {
         revisar = false;
     }
 
-
-
     Coche (int nb, String matr, String mar, String mod, String col, double prec, boolean rev, boolean[] revs){
         this.numBastidor = nb;
         this.matricula = matr;
@@ -136,7 +134,19 @@ public class Coche {
         return false;
     }
 
+    public void revisar(boolean[] revs){
+
+    }
+
     public String toString(){
         return this.matricula + " - " + this.marca + " - " + this.modelo;
+    }
+
+    public static void mostrarKms(Coche coche) {
+        if (coche instanceof Coche2mano) {
+            System.out.println("Kilómetros del coche: " + ((Coche2mano) coche).getKm());
+        } else {
+            System.out.println("Coche nuevo, con 0 km");
+        }
     }
 }
