@@ -142,11 +142,4 @@ public class Coche {
         return this.matricula + " - " + this.marca + " - " + this.modelo;
     }
 
-    public static void mostrarKms(Coche coche) {
-        if (coche instanceof Coche2mano) {
-            System.out.println("Kilómetros del coche: " + ((Coche2mano) coche).getKm());
-        } else {
-            System.out.println("Coche nuevo, con 0 km");
-        }
-    }
 }

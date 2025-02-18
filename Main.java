@@ -40,7 +40,15 @@ public class Main {
         }
 
         System.out.println("\nComprobando kilómetros:");
-        Coche.mostrarKms(cocheNu);
-        Coche.mostrarKms(cocheAnt);
+        mostrarKms(cocheNu);
+        mostrarKms(cocheAnt);
+    }
+
+    public static void mostrarKms(Coche coche) {
+        if (coche instanceof Coche2mano) {
+            System.out.println("Kilómetros del coche: " + ((Coche2mano) coche).getKm());
+        } else {
+            System.out.println("Coche nuevo, con 0 km");
+        }
     }
 }
