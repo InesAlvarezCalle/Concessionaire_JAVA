@@ -62,13 +62,19 @@ public class Main {
                 mostrarKms(cocheAnt);
 
             } else if (opcion == 2) {
-                int n;
+                String matricula = Leer.leerTexto("Introduce la matrícula del vehículo: ");
+                boolean encontrado = false;
 
-                n = Leer.leerEntero("Introduzca el número de coche a mostrar: ");
-                if(n < 1 || n > coches.size()){
-                    System.out.println("\nERROR: No está en la lista\n");
-                } else {
-                    System.out.println(coches.get(n-1));
+                for (int i = 0; i < coches.size(); i++) {
+                    if (coches.get(i).getMatricula().equals(matricula)){
+                        System.out.println(coches.get(i));
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if(!encontrado){
+                    System.out.println("El coche con esa matrícula no existe");
                 }
 
             } else if (opcion == 3) {
@@ -83,14 +89,20 @@ public class Main {
                         ));
 
             } else if (opcion == 4) {
-                int n = Leer.leerEntero("Introduce el número de coche a eliminar: ");
+                String matricula = Leer.leerTexto("Introduce la matrícula del vehículo: ");
+                boolean encontrado = false;
 
-                n = Leer.leerEntero("Introduzca el número de coche a mostrar: ");
-                if(n < 1 || n > coches.size()){
-                    System.out.println("\nERROR: No está en la lista\n");
-                } else {
-                    coches.remove(n -1);
-                    System.out.println("Borrado finalizado");
+                for (int i = 0; i < coches.size(); i++) {
+                    if (coches.get(i).getMatricula().equals(matricula)){
+                        coches.remove(i);
+                        System.out.println("Vehículo eliminado");
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if(!encontrado){
+                    System.out.println("El coche con esa matrícula no existe");
                 }
 
             }
